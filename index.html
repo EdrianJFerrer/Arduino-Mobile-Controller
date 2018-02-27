@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+  <!--Libraries-->
+  <script src="lib/jquery/jquery-3.3.1.min.js"></script>
+
+  <!--System-->
+  <link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/layout-portrait.css">
+	<link rel="stylesheet" href="css/layout-landscape.css">
+	<link rel="stylesheet" href="css/theme.css">
+
+  <title>Arduino Bluetooth</title>
+</head>
+
+
+
+<body>
+  <div class="header">Home</div>
+  <div class="section-container">
+    <div class="section" id="content">
+
+
+    </div>
+  </div>
+  <div class="navbar">
+    <a href="javascript:void(0)" go-to="home" class="active"></a>
+    <a href="javascript:void(0)" go-to="connect"></a>
+    <a href="javascript:void(0)" go-to="quick"></a>
+    <a href="javascript:void(0)" go-to="browse"></a>
+    <a href="javascript:void(0)" go-to="docs"></a>
+    <a href="javascript:void(0)" go-to="settings"></a>
+  </div>
+  <div class="active-bar" id="openController">
+    <a href="javascript:void(0)" open-this="terminal"></a>
+    <a href="javascript:void(0)">TerminalTerminalTerminalTerminal</a>
+    <a href="javascript:void(0)"><span class="bounding-box">Connect Now</span></a>
+  </div>
+  <div class="loader-container">
+    <svg width="300px" height="200px" viewBox="0 0 187.3 93.7" preserveAspectRatio="xMidYMid meet" style="left: 50%; top: 50%; position: absolute; transform: translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0);" id="outline-container">
+        <path stroke="red" id="outline" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+              d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1        c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
+        <path id="outline-bg" opacity="0.075" fill="none" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+              d="       M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1         c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
+              </svg>
+  </div>
+  <div class="controller-section">
+    <div class="active-bar" id="closeController">
+    <a href="javascript:void(0)" onclick="closeController()"></a>
+    <a href="javascript:void(0)" onclick="hideHeader()">TerminalTerminalTerminalTerminal</a>
+    <a href="javascript:void(0)"><span class="bounding-box">Connect Now</span></a>
+    </div>
+    <div id="showHeader" onclick="showHeader()"></div>
+    <div class="section" id="controllerContent">
+
+
+    </div>
+  </div>
+</body>
+
+
+
+<script src="js/ui.js" charset="utf-8"></script>
+<script src="cordova.js" charset="utf-8"></script>
+<script src="js/index.js" charset="utf-8"></script>
+</html>

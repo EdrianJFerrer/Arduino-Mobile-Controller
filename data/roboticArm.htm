@@ -1,0 +1,56 @@
+<div class="square-controller">
+	<div class="armLift prScroll" data-id="rota">
+		<div class="force-overflow"></div>
+	</div>
+	<div class="armLift prScroll" data-id="arm1">
+		<div class="force-overflow"></div>
+	</div>
+	<div class="armLift prScroll" data-id="arm2">
+		<div class="force-overflow"></div>
+	</div>
+	<div class="armLift prScroll" data-id="claw">
+		<div class="force-overflow"></div>
+	</div>
+</div>
+<br><br>
+<div class="square-controller">
+	<div class="carControls prButton" data-send="left"></div>
+	<div class="up-left">
+		<div class="carControls prButton" data-send="up"></div>
+		<div class="carControls prButton" data-send="down"></div>
+	</div>
+	<div class="carControls prButton" data-send="right"></div>
+</div>
+<div class="space-bottom"></div>
+<div id="console">No data received yet</div>
+<script>
+	$('.armLift').animate({ scrollTop: $(this).height() }, 1000);
+	var iScrollPos = 0;
+	setTimeout(function(){
+		$( ".armLift" ).scroll(function() {
+		var id = $(this).attr('data-id');
+  		prbutton.subscribe();
+    	var iCurScrollPos = $(this).scrollTop();
+    if (iCurScrollPos > iScrollPos) {
+        prbutton.sendData( id + 'down');
+    } else {
+       	prbutton.sendData( id + 'up');
+    }
+    iScrollPos = iCurScrollPos;
+    $("#controllerContent").css("overflow","hidden");
+    setTimeout(function(){
+    	$("#controllerContent").css("overflow","scroll");
+    },1000);
+	});
+	}, 1100);
+	
+
+	
+
+	$(".carControls").click(function(){
+		var data = $(this).attr('data-send');
+		prbutton.subscribe();
+  		prbutton.sendData(data);
+	});
+
+</script>

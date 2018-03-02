@@ -1,1 +1,30 @@
-<h1>Tab</h1>
+<input type="text" class="search-bar" onkeyup="browseProjects()" placeholder="Search for projects" id="browsePr">
+<hr>
+<div class="list-container" id="listPr">
+	<div class="list prlist" pr-type="a" data-link="terminal">
+		Terminal
+	</div>
+	<div class="list prlist" pr-type="b" data-link="roboticArm">
+		Robotic Arm
+	</div>
+
+</div>
+<script>
+
+$(".prlist").click(function(){
+        var prlink = $(this).attr( "data-link" );
+        var prname = $(this).html();
+        $("[open-this]").attr( "open-this",prlink );
+        var htM = 'data/' + prlink + ".htm";
+        $('#controllerContent').load(htM,openController);
+        $( ".active-bar > a:eq(1)" ).html(prname);
+        $( "#closeController > a:eq(1)" ).html(prname);
+     });
+
+$( "[data-link=terminal]" ).click(function() {
+  setTimeout(function(){
+   terminal.bindEvents();  
+  }, 1000);
+         
+    });
+</script>

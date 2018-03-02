@@ -1,0 +1,10 @@
+[pr-type=b]{
+	background: #ffcc5c !important;
+}
+[pr-type=a]{
+	background: orange !important;
+}
+.prlist:active{
+	background: black !important;
+	color: white;
+}
